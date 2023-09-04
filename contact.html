@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Web portfolio">
+    <meta name="keywords" content="Tomas, Beres, Tomas Beres, Beres Tomas, Tomáš, Béreš, Portfolio, Work">
+    <meta name="author" content="Tomáš Béreš">
+    <title>Tomáš Béreš - Graphic Designer</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Albert Sans' rel='stylesheet'>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <box-icon name='menu-alt-right'></box-icon>
+  </head>
+  <body>
+
+
+<header id="navbar">
+
+  <a href="#" class="logo"><img src="podpisLOGO2.png" alt="" width="150px" height="50px"></a>
+
+   <i class='bx bx-menu-alt-right' id="menu-icon"></i>
+
+  <nav class="navbar">
+        <a href="portfolio.html" class="active">HOME</a>
+            <a href="about.html">ABOUT</a>
+          
+  </nav>
+</header>
+
+
+
+
+
+
+
+
+
+
+<section class="contact" id="contact">
+<h2 class="heading">Contact</h2>
+
+<form name="submit-to-google-sheet">
+<div class="input-box">
+  <input type="text" name="Name" placeholder="Full Name" required>
+  <input type="email" name="Email" placeholder="Email Address" required>
+</div>
+<textarea name="Message" id="" cols="30" rows="10" placeholder="Your Message" required></textarea>
+<input type="submit" value="Send Message" class="btn">
+</form>
+
+</section>
+
+
+
+
+<footer>
+ <div class="content">
+  <i class='bx bx-copyright' ></i>   Tomáš Béreš | 2023 
+ </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbxM_O0f3rmxpl62EwFKicZqMOXjZgx1MhqDzt0GITu9859wAwclSkq0iw2NyHaRBNTz0A/exec'
+  const form = document.forms['submit-to-google-sheet']
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => console.log('Success!', response))
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
+
+<script>
+  var prevScrollpos = window.pageYOffset;
+  window.onscroll = function() {
+  var currentScrollPos = window.pageYOffset;
+    if (prevScrollpos > currentScrollPos) {
+      document.getElementById("navbar").style.top = "0";
+    } else {
+      document.getElementById("navbar").style.top = "-100px";
+    }
+    prevScrollpos = currentScrollPos;
+  }
+  </script>
+  </body>
+</html>
+</a>
